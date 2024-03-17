@@ -1,0 +1,79 @@
+version: '3'
+
+services:
+    app:
+        image: node:latest
+        container_name: app
+        restart: always
+        working_dir: /var/www/app
+        command: npm run start:dev
+        volumes:
+            - ./:/var/www/app
+        ports:
+            - '3000:3000'
+        depends_on:
+            - mysql
+            - redis
+        env_file:
+            - .env
+        networks:
+            app_net:
+                aliases:
+                    - app
+
+    mysql:
+        image: mysql:8
+        container_name: mysql
+        restart: always
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_ROOT_PASSWORD: secret
+            MYSQL_DATABASE: file_manager
+            MYSQL_USER: file_manager
+            MYSQL_PASSWORD: secret
+        ports:
+            - '33061:3306'
+        volumes:
+            - mysql_data:/var/lib/mysql
+        networks:
+            app_net:
+                aliases:
+                    - mysql
+
+    redis:
+        image: redis:latest
+        container_name: redis
+        restart: always
+        command: redis-server --requirepass secret
+        ports:
+            - '63791:6379'
+        volumes:
+            - redis_data:/data
+        networks:
+            app_net:
+                aliases:
+                    - redis
+
+    minio:
+        image: minio/minio
+        container_name: minio
+        ports:
+            - "9000:9000"
+        environment:
+            MINIO_ACCESS_KEY: minio
+            MINIO_SECRET_KEY: miniosecret
+        volumes:
+            - minio_data:/data
+        command: server /data
+        networks:
+            app_net:
+                aliases:
+                    - minio
+
+volumes:
+    mysql_data:
+    redis_data:
+    minio_data:
+
+networks:
+    app_net:

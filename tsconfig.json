@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "rootDir": "./",
+        "outDir": "build",
+        "module": "CommonJS",
+        "esModuleInterop": true,
+        "target": "es6",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "allowJs": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "typeRoots": ["node_modules/@types/"],
+        "baseUrl": "./",
+        "paths": {
+            "@app/*": ["src/app/*"],
+            "@config/*": ["src/config/*"],
+            "@core/*": ["src/core/*"],
+            "@routes/*": ["src/routes/*"]
+        }
+    },
+    "lib": ["es5", "es6"],
+    "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.cjs", "tests/**/*.spec.ts"],
+    "exclude": ["node_modules", "build"]
+}

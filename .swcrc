@@ -1,0 +1,23 @@
+{
+    "jsc": {
+        "parser": {
+            "syntax": "typescript",
+            "dynamicImport": false,
+            "decorators": true
+        },
+        "target": "es2022",
+        "loose": false,
+        "externalHelpers": false,
+        "baseUrl": "./",
+        "paths": {
+            "@app/*": ["src/app/*"],
+            "@config/*": ["src/config/*"],
+            "@core/*": ["src/core/*"],
+            "@routes/*": ["src/routes/*"]
+        }
+    },
+    "minify": false,
+    "module": {
+        "type": "commonjs"
+    }
+}
