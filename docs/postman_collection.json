@@ -1,0 +1,274 @@
+{
+    "info": {
+        "_postman_id": "c6eb663b-0e8e-4168-9e0e-da6b1668e796",
+        "name": "MeldCX - Filer Sharing API Server",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "21252448"
+    },
+    "item": [
+        {
+            "name": "Health Check",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{BASE_URL}}/api/v1/health-check",
+                    "host": ["{{BASE_URL}}"],
+                    "path": ["api", "v1", "health-check"]
+                }
+            },
+            "response": [
+                {
+                    "name": "Health Check",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:3000/api/v1/health-check",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["api", "v1", "health-check"]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "X-Powered-By",
+                            "value": "Express"
+                        },
+                        {
+                            "key": "Access-Control-Allow-Origin",
+                            "value": "*"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json; charset=utf-8"
+                        },
+                        {
+                            "key": "Content-Length",
+                            "value": "124"
+                        },
+                        {
+                            "key": "ETag",
+                            "value": "W/\"7c-TijqiJLQb51ZqQv9/hMrOeEUUXY\""
+                        },
+                        {
+                            "key": "Date",
+                            "value": "Sun, 24 Mar 2024 06:29:01 GMT"
+                        },
+                        {
+                            "key": "Connection",
+                            "value": "keep-alive"
+                        },
+                        {
+                            "key": "Keep-Alive",
+                            "value": "timeout=5"
+                        }
+                    ],
+                    "cookie": [],
+                    "body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Application is running!\",\n    \"data\": {\n        \"app_name\": \"File Manager\",\n        \"app_version\": \"1.0.0\"\n    }\n}"
+                }
+            ]
+        },
+        {
+            "name": "File Upload",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "file",
+                            "type": "file",
+                            "src": "/home/bs856/Pictures/Screenshot from 2024-03-18 10-33-18.png"
+                        }
+                    ]
+                },
+                "url": {
+                    "raw": "{{BASE_URL}}/api/v1/files",
+                    "host": ["{{BASE_URL}}"],
+                    "path": ["api", "v1", "files"]
+                }
+            },
+            "response": [
+                {
+                    "name": "File Upload",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "file",
+                                    "type": "file",
+                                    "src": "/home/bs856/Pictures/image.png"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "http://localhost:3000/api/v1/files",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["api", "v1", "files"]
+                        }
+                    },
+                    "status": "Created",
+                    "code": 201,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "X-Powered-By",
+                            "value": "Express"
+                        },
+                        {
+                            "key": "Access-Control-Allow-Origin",
+                            "value": "*"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json; charset=utf-8"
+                        },
+                        {
+                            "key": "Content-Length",
+                            "value": "3647"
+                        },
+                        {
+                            "key": "ETag",
+                            "value": "W/\"e3f-mRog3IjE/W59I5zDxd4GXb1s3Gs\""
+                        },
+                        {
+                            "key": "Date",
+                            "value": "Sun, 24 Mar 2024 06:26:46 GMT"
+                        },
+                        {
+                            "key": "Connection",
+                            "value": "keep-alive"
+                        },
+                        {
+                            "key": "Keep-Alive",
+                            "value": "timeout=5"
+                        }
+                    ],
+                    "cookie": [],
+                    "body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Created\",\n    \"data\": {\n        \"createdAt\": \"2024-03-24T06:26:46.467Z\",\n        \"updatedAt\": \"2024-03-24T06:26:46.468Z\",\n        \"id\": \"c26475a2-d0c2-46c7-936e-36df4a6798ad\",\n        \"fileName\": \"c26475a2-d0c2-46c7-936e-36df4a6798ad.png\",\n        \"path\": \"/var/www/app/storage/files/c26475a2-d0c2-46c7-936e-36df4a6798ad.png\",\n        \"size\": 31717,\n        \"mimeType\": \"image/png\",\n        \"publicKey\": \"LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFqM251SkxNbTRIMzhlTFZVS09rOApMd2E0Z1RyZ3MzN3pjUTNMNWxyaXFTSmtycVFWMHBTQ2NmNHp1czRlZUVPb0tDMkZJeFV3SnIzRCtSWHlWMktSCkZZZXpZM1VxeUd5SWZLUGQ5bGJXYThYejhMb3lDb3BqemU0Z0NBdFN0clFBY0plaDR6NVNSMVBVL2FONEpCWDYKdWpDY25od2I2UTIzL0NibnpYMGNuK3d5TDlYVGFXWXJ1a1FCMXRFMFdMZ3lvSjgrd0ZTKzJTd3BxMHFHWnBIcwpsbXZhS0tFZkZPNXY0QmMxa3dWTWxOaXJhYWJYQUk0M3dGZ2ViSkdYUjZibW12REdJTm81a0laN2I0VGJJUzJzCnQydnBmNTF1TDJTelFOcWRFMnhuRm00QktHUUd5em9wbW96c3VBTmFQYWQzMG1VQ1ROb3o1VytMakFQb29Xa04Kc1FJREFRQUIKLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg==\",\n        \"privateKey\": \"LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRQ1BlZTRrc3liZ2ZmeDQKdFZRbzZUd3ZCcmlCT3VDemZ2TnhEY3ZtV3VLcEltU3VwQlhTbElKeC9qTzZ6aDU0UTZnb0xZVWpGVEFtdmNQNQpGZkpYWXBFVmg3TmpkU3JJYkloOG85MzJWdFpyeGZQd3VqSUtpbVBON2lBSUMxSzJ0QUJ3bDZIalBsSkhVOVQ5Cm8zZ2tGZnE2TUp5ZUhCdnBEYmY4SnVmTmZSeWY3REl2MWROcFppdTZSQUhXMFRSWXVES2duejdBVkw3WkxDbXIKU29abWtleVdhOW9vb1I4VTdtL2dGeldUQlV5VTJLdHBwdGNBampmQVdCNXNrWmRIcHVhYThNWWcyam1RaG50dgpoTnNoTGF5M2ErbC9uVzR2WkxOQTJwMFRiR2NXYmdFb1pBYkxPaW1hak95NEExbzlwM2ZTWlFKTTJqUGxiNHVNCkEraWhhUTJ4QWdNQkFBRUNnZ0VBRjZpa3NlTGtNc1E0K1NpaGZQRGZqcER6cE1VSGlqY1JhcCtQODJkM2xTbjAKT0pqRnk4aUJ3czFjVExOY3grVVVMMTA0NVRlWVl6MjE0L2JsVkM2UE83Y2tTQmxwTHMwNEs4d1R0N2JMRUh0LwpHeFRXVi9HZVorQ2FqSk95d0g0L0lsSGNEVU91RlUveXdSNWtjRzJRRk5yR1FMWTVqZjBkVFNtWE0zQ0JqZ2MwCkFPSWViOU83ZHZRWm5BS3NTVXpIcC9VcitRSitHSVg1cmN1aGpqVDlLZUwyS2xBdkRGWVRJNmlpZ0tMa1VsUWYKMnVVbldnSkxVbEtlc2VIbE03SjRaNFdxRTNPVnRjSUpqOG00cEFKY0lvWWZ4bnBoQUlvS0ZVbldPTDhXLzNMVwpjd0pQZEhZbXdLeUU3a2s2WS9YS0FuZ2xMVXd1dFJ3TGNiNEdBUUZWbHdLQmdRREtBdWNpVUI5aWJtb1JKeTBUCmlDTXVzaUVsd29RMks4Q1p4YmhGbm5wR1hVbWpiWUUvSkRyeW16eXgzRktFUGdyci8xdkoxTW9uQklQcm4yQ1cKem5iZTdtNi8rVGJSdTE3YldiWkR5bUJnVVpma1pPNjdGZzBoNlllWnlSam9xUkM0QVAzT1g3NE9WeGdiM3o3dgorRXZGaDlzcmFvZHlSNzZwczYweDFPOWlid0tCZ1FDMTBqV28yREVUbTNxNjA4Sjlka1J0YVczaVpIK0RGU0swCjVHSXJJa3RFSVpPQi9zNkc3T3Q4Y0RLS3VoeXZHUFFvbDdkUW05K0xXZ1FBZVl4aURZdkVIU05pb3dSbExPSlAKL210bWVzWHpsbXRpUE9tMGFHTHBaMjg2MVo3SlhwY3A1WFdsaEFnY0VLNVdZWFdQSVV1M0ZnRktTLzU2eWFhMgo2eFBIbXU0aDN3S0JnUUNoa2ZyTm5lbk1MMldVUEpJMytmMnh2blQybjRKaFZWTWhhbHQ5QzBqZStJUUtPMjVSClV5ZjJuS1RKMk44Q3VDRENLcVorWWp3aFF1SkVWVi9Lbm0zQzFrOHNLaVpuVHdhS1NGR1lITWhDb1Yvc0k3SXgKWG15NGYvQ2QxcEtlbTRJc3VWWkdkcHNyR3d2RVZ5VWVoNmdLNENNeXNXeU53Y1pFTXRwR2JmbmM3d0tCZ0VKYQpoYVNweVRjN25ZMkM3RTUzRTcvT0l3RGs1amdEUlpnNFpLOFRJOTZvVmpteHNOTkNzU25IbEZwV1UxTi9TdE5wCmtzZkRLdENqT0NTb054Z3RrMTB0dVJVdEl0UjlqZFhkcG5wT3dlRUVld250NnVnZzFFQVR0RjhIU0p4NmZiWVgKZkZpOEYyMk9sT0VIVGl5KzNPL2pBdk9IU2thclFzRXNoeHBvS3hHSEFvR0FEb0h1YnRiTWMxWklhSUlUQ0hRWApBQ3AxRDVNWDFHaDBYQlZvdFJ6c21LQlVySzNrd0lFL2ZTdXJvbnpsYnArZjBGSXBmQmgvTjFtL2xuTGlOSnNwCkVhRmZtWFZVYSsxL0RIa3VUcDVra1BqRm1GdGU0aGU5YzdSOEdsckJRcE9uQmY4L1FjMWovU2VNY1JOcGhWK2wKYVdDYXRrNTJBSTJ2SlF0eWlVV2lOTzA9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K\",\n        \"signature\": \"M/qfN9xOj75zCxcUcp3P8pn1Y3WCT5P+t6gy+iy+WgKeH1h79KPe4mk2fM/ZT5INoEbqvIF98AG+l8KSH5biRW3kxKUPHYKeCOYzW3TesMF00wo307gnbPXz2x7SUJWcxKcABZOzTP81XwAwgYetpZWvLmrxFK5PYxheyAvjMdXtXLV7afpKJCD1uzQXIkWQOgHVPok1RepRPoknmi1J0gE+tHXzkKh2XtIRUwdOGm4e8Ww2RnS2//+HoNP7fjJTpGbxrd4q//CXKsN9x3T43uNS8b2n0iR3wsHEuLSDFv/Vy1T6ZMb8w8rY9SLwfsRTF4Ep3zrcEKjWL9jkJ14rMg==\",\n        \"ipAddress\": \"::ffff:172.28.0.1\"\n    }\n}"
+                }
+            ]
+        },
+        {
+            "name": "File Download",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{BASE_URL}}/api/v1/files/LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFqM251SkxNbTRIMzhlTFZVS09rOApMd2E0Z1RyZ3MzN3pjUTNMNWxyaXFTSmtycVFWMHBTQ2NmNHp1czRlZUVPb0tDMkZJeFV3SnIzRCtSWHlWMktSCkZZZXpZM1VxeUd5SWZLUGQ5bGJXYThYejhMb3lDb3BqemU0Z0NBdFN0clFBY0plaDR6NVNSMVBVL2FONEpCWDYKdWpDY25od2I2UTIzL0NibnpYMGNuK3d5TDlYVGFXWXJ1a1FCMXRFMFdMZ3lvSjgrd0ZTKzJTd3BxMHFHWnBIcwpsbXZhS0tFZkZPNXY0QmMxa3dWTWxOaXJhYWJYQUk0M3dGZ2ViSkdYUjZibW12REdJTm81a0laN2I0VGJJUzJzCnQydnBmNTF1TDJTelFOcWRFMnhuRm00QktHUUd5em9wbW96c3VBTmFQYWQzMG1VQ1ROb3o1VytMakFQb29Xa04Kc1FJREFRQUIKLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg==",
+                    "host": ["{{BASE_URL}}"],
+                    "path": [
+                        "api",
+                        "v1",
+                        "files",
+                        "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFqM251SkxNbTRIMzhlTFZVS09rOApMd2E0Z1RyZ3MzN3pjUTNMNWxyaXFTSmtycVFWMHBTQ2NmNHp1czRlZUVPb0tDMkZJeFV3SnIzRCtSWHlWMktSCkZZZXpZM1VxeUd5SWZLUGQ5bGJXYThYejhMb3lDb3BqemU0Z0NBdFN0clFBY0plaDR6NVNSMVBVL2FONEpCWDYKdWpDY25od2I2UTIzL0NibnpYMGNuK3d5TDlYVGFXWXJ1a1FCMXRFMFdMZ3lvSjgrd0ZTKzJTd3BxMHFHWnBIcwpsbXZhS0tFZkZPNXY0QmMxa3dWTWxOaXJhYWJYQUk0M3dGZ2ViSkdYUjZibW12REdJTm81a0laN2I0VGJJUzJzCnQydnBmNTF1TDJTelFOcWRFMnhuRm00QktHUUd5em9wbW96c3VBTmFQYWQzMG1VQ1ROb3o1VytMakFQb29Xa04Kc1FJREFRQUIKLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg=="
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "FIle Delete",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                    "raw": "{{BASE_URL}}/api/v1/files/LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRQ1BlZTRrc3liZ2ZmeDQKdFZRbzZUd3ZCcmlCT3VDemZ2TnhEY3ZtV3VLcEltU3VwQlhTbElKeC9qTzZ6aDU0UTZnb0xZVWpGVEFtdmNQNQpGZkpYWXBFVmg3TmpkU3JJYkloOG85MzJWdFpyeGZQd3VqSUtpbVBON2lBSUMxSzJ0QUJ3bDZIalBsSkhVOVQ5Cm8zZ2tGZnE2TUp5ZUhCdnBEYmY4SnVmTmZSeWY3REl2MWROcFppdTZSQUhXMFRSWXVES2duejdBVkw3WkxDbXIKU29abWtleVdhOW9vb1I4VTdtL2dGeldUQlV5VTJLdHBwdGNBampmQVdCNXNrWmRIcHVhYThNWWcyam1RaG50dgpoTnNoTGF5M2ErbC9uVzR2WkxOQTJwMFRiR2NXYmdFb1pBYkxPaW1hak95NEExbzlwM2ZTWlFKTTJqUGxiNHVNCkEraWhhUTJ4QWdNQkFBRUNnZ0VBRjZpa3NlTGtNc1E0K1NpaGZQRGZqcER6cE1VSGlqY1JhcCtQODJkM2xTbjAKT0pqRnk4aUJ3czFjVExOY3grVVVMMTA0NVRlWVl6MjE0L2JsVkM2UE83Y2tTQmxwTHMwNEs4d1R0N2JMRUh0LwpHeFRXVi9HZVorQ2FqSk95d0g0L0lsSGNEVU91RlUveXdSNWtjRzJRRk5yR1FMWTVqZjBkVFNtWE0zQ0JqZ2MwCkFPSWViOU83ZHZRWm5BS3NTVXpIcC9VcitRSitHSVg1cmN1aGpqVDlLZUwyS2xBdkRGWVRJNmlpZ0tMa1VsUWYKMnVVbldnSkxVbEtlc2VIbE03SjRaNFdxRTNPVnRjSUpqOG00cEFKY0lvWWZ4bnBoQUlvS0ZVbldPTDhXLzNMVwpjd0pQZEhZbXdLeUU3a2s2WS9YS0FuZ2xMVXd1dFJ3TGNiNEdBUUZWbHdLQmdRREtBdWNpVUI5aWJtb1JKeTBUCmlDTXVzaUVsd29RMks4Q1p4YmhGbm5wR1hVbWpiWUUvSkRyeW16eXgzRktFUGdyci8xdkoxTW9uQklQcm4yQ1cKem5iZTdtNi8rVGJSdTE3YldiWkR5bUJnVVpma1pPNjdGZzBoNlllWnlSam9xUkM0QVAzT1g3NE9WeGdiM3o3dgorRXZGaDlzcmFvZHlSNzZwczYweDFPOWlid0tCZ1FDMTBqV28yREVUbTNxNjA4Sjlka1J0YVczaVpIK0RGU0swCjVHSXJJa3RFSVpPQi9zNkc3T3Q4Y0RLS3VoeXZHUFFvbDdkUW05K0xXZ1FBZVl4aURZdkVIU05pb3dSbExPSlAKL210bWVzWHpsbXRpUE9tMGFHTHBaMjg2MVo3SlhwY3A1WFdsaEFnY0VLNVdZWFdQSVV1M0ZnRktTLzU2eWFhMgo2eFBIbXU0aDN3S0JnUUNoa2ZyTm5lbk1MMldVUEpJMytmMnh2blQybjRKaFZWTWhhbHQ5QzBqZStJUUtPMjVSClV5ZjJuS1RKMk44Q3VDRENLcVorWWp3aFF1SkVWVi9Lbm0zQzFrOHNLaVpuVHdhS1NGR1lITWhDb1Yvc0k3SXgKWG15NGYvQ2QxcEtlbTRJc3VWWkdkcHNyR3d2RVZ5VWVoNmdLNENNeXNXeU53Y1pFTXRwR2JmbmM3d0tCZ0VKYQpoYVNweVRjN25ZMkM3RTUzRTcvT0l3RGs1amdEUlpnNFpLOFRJOTZvVmpteHNOTkNzU25IbEZwV1UxTi9TdE5wCmtzZkRLdENqT0NTb054Z3RrMTB0dVJVdEl0UjlqZFhkcG5wT3dlRUVld250NnVnZzFFQVR0RjhIU0p4NmZiWVgKZkZpOEYyMk9sT0VIVGl5KzNPL2pBdk9IU2thclFzRXNoeHBvS3hHSEFvR0FEb0h1YnRiTWMxWklhSUlUQ0hRWApBQ3AxRDVNWDFHaDBYQlZvdFJ6c21LQlVySzNrd0lFL2ZTdXJvbnpsYnArZjBGSXBmQmgvTjFtL2xuTGlOSnNwCkVhRmZtWFZVYSsxL0RIa3VUcDVra1BqRm1GdGU0aGU5YzdSOEdsckJRcE9uQmY4L1FjMWovU2VNY1JOcGhWK2wKYVdDYXRrNTJBSTJ2SlF0eWlVV2lOTzA9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K",
+                    "host": ["{{BASE_URL}}"],
+                    "path": [
+                        "api",
+                        "v1",
+                        "files",
+                        "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRQ1BlZTRrc3liZ2ZmeDQKdFZRbzZUd3ZCcmlCT3VDemZ2TnhEY3ZtV3VLcEltU3VwQlhTbElKeC9qTzZ6aDU0UTZnb0xZVWpGVEFtdmNQNQpGZkpYWXBFVmg3TmpkU3JJYkloOG85MzJWdFpyeGZQd3VqSUtpbVBON2lBSUMxSzJ0QUJ3bDZIalBsSkhVOVQ5Cm8zZ2tGZnE2TUp5ZUhCdnBEYmY4SnVmTmZSeWY3REl2MWROcFppdTZSQUhXMFRSWXVES2duejdBVkw3WkxDbXIKU29abWtleVdhOW9vb1I4VTdtL2dGeldUQlV5VTJLdHBwdGNBampmQVdCNXNrWmRIcHVhYThNWWcyam1RaG50dgpoTnNoTGF5M2ErbC9uVzR2WkxOQTJwMFRiR2NXYmdFb1pBYkxPaW1hak95NEExbzlwM2ZTWlFKTTJqUGxiNHVNCkEraWhhUTJ4QWdNQkFBRUNnZ0VBRjZpa3NlTGtNc1E0K1NpaGZQRGZqcER6cE1VSGlqY1JhcCtQODJkM2xTbjAKT0pqRnk4aUJ3czFjVExOY3grVVVMMTA0NVRlWVl6MjE0L2JsVkM2UE83Y2tTQmxwTHMwNEs4d1R0N2JMRUh0LwpHeFRXVi9HZVorQ2FqSk95d0g0L0lsSGNEVU91RlUveXdSNWtjRzJRRk5yR1FMWTVqZjBkVFNtWE0zQ0JqZ2MwCkFPSWViOU83ZHZRWm5BS3NTVXpIcC9VcitRSitHSVg1cmN1aGpqVDlLZUwyS2xBdkRGWVRJNmlpZ0tMa1VsUWYKMnVVbldnSkxVbEtlc2VIbE03SjRaNFdxRTNPVnRjSUpqOG00cEFKY0lvWWZ4bnBoQUlvS0ZVbldPTDhXLzNMVwpjd0pQZEhZbXdLeUU3a2s2WS9YS0FuZ2xMVXd1dFJ3TGNiNEdBUUZWbHdLQmdRREtBdWNpVUI5aWJtb1JKeTBUCmlDTXVzaUVsd29RMks4Q1p4YmhGbm5wR1hVbWpiWUUvSkRyeW16eXgzRktFUGdyci8xdkoxTW9uQklQcm4yQ1cKem5iZTdtNi8rVGJSdTE3YldiWkR5bUJnVVpma1pPNjdGZzBoNlllWnlSam9xUkM0QVAzT1g3NE9WeGdiM3o3dgorRXZGaDlzcmFvZHlSNzZwczYweDFPOWlid0tCZ1FDMTBqV28yREVUbTNxNjA4Sjlka1J0YVczaVpIK0RGU0swCjVHSXJJa3RFSVpPQi9zNkc3T3Q4Y0RLS3VoeXZHUFFvbDdkUW05K0xXZ1FBZVl4aURZdkVIU05pb3dSbExPSlAKL210bWVzWHpsbXRpUE9tMGFHTHBaMjg2MVo3SlhwY3A1WFdsaEFnY0VLNVdZWFdQSVV1M0ZnRktTLzU2eWFhMgo2eFBIbXU0aDN3S0JnUUNoa2ZyTm5lbk1MMldVUEpJMytmMnh2blQybjRKaFZWTWhhbHQ5QzBqZStJUUtPMjVSClV5ZjJuS1RKMk44Q3VDRENLcVorWWp3aFF1SkVWVi9Lbm0zQzFrOHNLaVpuVHdhS1NGR1lITWhDb1Yvc0k3SXgKWG15NGYvQ2QxcEtlbTRJc3VWWkdkcHNyR3d2RVZ5VWVoNmdLNENNeXNXeU53Y1pFTXRwR2JmbmM3d0tCZ0VKYQpoYVNweVRjN25ZMkM3RTUzRTcvT0l3RGs1amdEUlpnNFpLOFRJOTZvVmpteHNOTkNzU25IbEZwV1UxTi9TdE5wCmtzZkRLdENqT0NTb054Z3RrMTB0dVJVdEl0UjlqZFhkcG5wT3dlRUVld250NnVnZzFFQVR0RjhIU0p4NmZiWVgKZkZpOEYyMk9sT0VIVGl5KzNPL2pBdk9IU2thclFzRXNoeHBvS3hHSEFvR0FEb0h1YnRiTWMxWklhSUlUQ0hRWApBQ3AxRDVNWDFHaDBYQlZvdFJ6c21LQlVySzNrd0lFL2ZTdXJvbnpsYnArZjBGSXBmQmgvTjFtL2xuTGlOSnNwCkVhRmZtWFZVYSsxL0RIa3VUcDVra1BqRm1GdGU0aGU5YzdSOEdsckJRcE9uQmY4L1FjMWovU2VNY1JOcGhWK2wKYVdDYXRrNTJBSTJ2SlF0eWlVV2lOTzA9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K"
+                    ]
+                }
+            },
+            "response": [
+                {
+                    "name": "File Delete",
+                    "originalRequest": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:3000/api/v1/files/LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRQ1BlZTRrc3liZ2ZmeDQKdFZRbzZUd3ZCcmlCT3VDemZ2TnhEY3ZtV3VLcEltU3VwQlhTbElKeC9qTzZ6aDU0UTZnb0xZVWpGVEFtdmNQNQpGZkpYWXBFVmg3TmpkU3JJYkloOG85MzJWdFpyeGZQd3VqSUtpbVBON2lBSUMxSzJ0QUJ3bDZIalBsSkhVOVQ5Cm8zZ2tGZnE2TUp5ZUhCdnBEYmY4SnVmTmZSeWY3REl2MWROcFppdTZSQUhXMFRSWXVES2duejdBVkw3WkxDbXIKU29abWtleVdhOW9vb1I4VTdtL2dGeldUQlV5VTJLdHBwdGNBampmQVdCNXNrWmRIcHVhYThNWWcyam1RaG50dgpoTnNoTGF5M2ErbC9uVzR2WkxOQTJwMFRiR2NXYmdFb1pBYkxPaW1hak95NEExbzlwM2ZTWlFKTTJqUGxiNHVNCkEraWhhUTJ4QWdNQkFBRUNnZ0VBRjZpa3NlTGtNc1E0K1NpaGZQRGZqcER6cE1VSGlqY1JhcCtQODJkM2xTbjAKT0pqRnk4aUJ3czFjVExOY3grVVVMMTA0NVRlWVl6MjE0L2JsVkM2UE83Y2tTQmxwTHMwNEs4d1R0N2JMRUh0LwpHeFRXVi9HZVorQ2FqSk95d0g0L0lsSGNEVU91RlUveXdSNWtjRzJRRk5yR1FMWTVqZjBkVFNtWE0zQ0JqZ2MwCkFPSWViOU83ZHZRWm5BS3NTVXpIcC9VcitRSitHSVg1cmN1aGpqVDlLZUwyS2xBdkRGWVRJNmlpZ0tMa1VsUWYKMnVVbldnSkxVbEtlc2VIbE03SjRaNFdxRTNPVnRjSUpqOG00cEFKY0lvWWZ4bnBoQUlvS0ZVbldPTDhXLzNMVwpjd0pQZEhZbXdLeUU3a2s2WS9YS0FuZ2xMVXd1dFJ3TGNiNEdBUUZWbHdLQmdRREtBdWNpVUI5aWJtb1JKeTBUCmlDTXVzaUVsd29RMks4Q1p4YmhGbm5wR1hVbWpiWUUvSkRyeW16eXgzRktFUGdyci8xdkoxTW9uQklQcm4yQ1cKem5iZTdtNi8rVGJSdTE3YldiWkR5bUJnVVpma1pPNjdGZzBoNlllWnlSam9xUkM0QVAzT1g3NE9WeGdiM3o3dgorRXZGaDlzcmFvZHlSNzZwczYweDFPOWlid0tCZ1FDMTBqV28yREVUbTNxNjA4Sjlka1J0YVczaVpIK0RGU0swCjVHSXJJa3RFSVpPQi9zNkc3T3Q4Y0RLS3VoeXZHUFFvbDdkUW05K0xXZ1FBZVl4aURZdkVIU05pb3dSbExPSlAKL210bWVzWHpsbXRpUE9tMGFHTHBaMjg2MVo3SlhwY3A1WFdsaEFnY0VLNVdZWFdQSVV1M0ZnRktTLzU2eWFhMgo2eFBIbXU0aDN3S0JnUUNoa2ZyTm5lbk1MMldVUEpJMytmMnh2blQybjRKaFZWTWhhbHQ5QzBqZStJUUtPMjVSClV5ZjJuS1RKMk44Q3VDRENLcVorWWp3aFF1SkVWVi9Lbm0zQzFrOHNLaVpuVHdhS1NGR1lITWhDb1Yvc0k3SXgKWG15NGYvQ2QxcEtlbTRJc3VWWkdkcHNyR3d2RVZ5VWVoNmdLNENNeXNXeU53Y1pFTXRwR2JmbmM3d0tCZ0VKYQpoYVNweVRjN25ZMkM3RTUzRTcvT0l3RGs1amdEUlpnNFpLOFRJOTZvVmpteHNOTkNzU25IbEZwV1UxTi9TdE5wCmtzZkRLdENqT0NTb054Z3RrMTB0dVJVdEl0UjlqZFhkcG5wT3dlRUVld250NnVnZzFFQVR0RjhIU0p4NmZiWVgKZkZpOEYyMk9sT0VIVGl5KzNPL2pBdk9IU2thclFzRXNoeHBvS3hHSEFvR0FEb0h1YnRiTWMxWklhSUlUQ0hRWApBQ3AxRDVNWDFHaDBYQlZvdFJ6c21LQlVySzNrd0lFL2ZTdXJvbnpsYnArZjBGSXBmQmgvTjFtL2xuTGlOSnNwCkVhRmZtWFZVYSsxL0RIa3VUcDVra1BqRm1GdGU0aGU5YzdSOEdsckJRcE9uQmY4L1FjMWovU2VNY1JOcGhWK2wKYVdDYXRrNTJBSTJ2SlF0eWlVV2lOTzA9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": [
+                                "api",
+                                "v1",
+                                "files",
+                                "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRQ1BlZTRrc3liZ2ZmeDQKdFZRbzZUd3ZCcmlCT3VDemZ2TnhEY3ZtV3VLcEltU3VwQlhTbElKeC9qTzZ6aDU0UTZnb0xZVWpGVEFtdmNQNQpGZkpYWXBFVmg3TmpkU3JJYkloOG85MzJWdFpyeGZQd3VqSUtpbVBON2lBSUMxSzJ0QUJ3bDZIalBsSkhVOVQ5Cm8zZ2tGZnE2TUp5ZUhCdnBEYmY4SnVmTmZSeWY3REl2MWROcFppdTZSQUhXMFRSWXVES2duejdBVkw3WkxDbXIKU29abWtleVdhOW9vb1I4VTdtL2dGeldUQlV5VTJLdHBwdGNBampmQVdCNXNrWmRIcHVhYThNWWcyam1RaG50dgpoTnNoTGF5M2ErbC9uVzR2WkxOQTJwMFRiR2NXYmdFb1pBYkxPaW1hak95NEExbzlwM2ZTWlFKTTJqUGxiNHVNCkEraWhhUTJ4QWdNQkFBRUNnZ0VBRjZpa3NlTGtNc1E0K1NpaGZQRGZqcER6cE1VSGlqY1JhcCtQODJkM2xTbjAKT0pqRnk4aUJ3czFjVExOY3grVVVMMTA0NVRlWVl6MjE0L2JsVkM2UE83Y2tTQmxwTHMwNEs4d1R0N2JMRUh0LwpHeFRXVi9HZVorQ2FqSk95d0g0L0lsSGNEVU91RlUveXdSNWtjRzJRRk5yR1FMWTVqZjBkVFNtWE0zQ0JqZ2MwCkFPSWViOU83ZHZRWm5BS3NTVXpIcC9VcitRSitHSVg1cmN1aGpqVDlLZUwyS2xBdkRGWVRJNmlpZ0tMa1VsUWYKMnVVbldnSkxVbEtlc2VIbE03SjRaNFdxRTNPVnRjSUpqOG00cEFKY0lvWWZ4bnBoQUlvS0ZVbldPTDhXLzNMVwpjd0pQZEhZbXdLeUU3a2s2WS9YS0FuZ2xMVXd1dFJ3TGNiNEdBUUZWbHdLQmdRREtBdWNpVUI5aWJtb1JKeTBUCmlDTXVzaUVsd29RMks4Q1p4YmhGbm5wR1hVbWpiWUUvSkRyeW16eXgzRktFUGdyci8xdkoxTW9uQklQcm4yQ1cKem5iZTdtNi8rVGJSdTE3YldiWkR5bUJnVVpma1pPNjdGZzBoNlllWnlSam9xUkM0QVAzT1g3NE9WeGdiM3o3dgorRXZGaDlzcmFvZHlSNzZwczYweDFPOWlid0tCZ1FDMTBqV28yREVUbTNxNjA4Sjlka1J0YVczaVpIK0RGU0swCjVHSXJJa3RFSVpPQi9zNkc3T3Q4Y0RLS3VoeXZHUFFvbDdkUW05K0xXZ1FBZVl4aURZdkVIU05pb3dSbExPSlAKL210bWVzWHpsbXRpUE9tMGFHTHBaMjg2MVo3SlhwY3A1WFdsaEFnY0VLNVdZWFdQSVV1M0ZnRktTLzU2eWFhMgo2eFBIbXU0aDN3S0JnUUNoa2ZyTm5lbk1MMldVUEpJMytmMnh2blQybjRKaFZWTWhhbHQ5QzBqZStJUUtPMjVSClV5ZjJuS1RKMk44Q3VDRENLcVorWWp3aFF1SkVWVi9Lbm0zQzFrOHNLaVpuVHdhS1NGR1lITWhDb1Yvc0k3SXgKWG15NGYvQ2QxcEtlbTRJc3VWWkdkcHNyR3d2RVZ5VWVoNmdLNENNeXNXeU53Y1pFTXRwR2JmbmM3d0tCZ0VKYQpoYVNweVRjN25ZMkM3RTUzRTcvT0l3RGs1amdEUlpnNFpLOFRJOTZvVmpteHNOTkNzU25IbEZwV1UxTi9TdE5wCmtzZkRLdENqT0NTb054Z3RrMTB0dVJVdEl0UjlqZFhkcG5wT3dlRUVld250NnVnZzFFQVR0RjhIU0p4NmZiWVgKZkZpOEYyMk9sT0VIVGl5KzNPL2pBdk9IU2thclFzRXNoeHBvS3hHSEFvR0FEb0h1YnRiTWMxWklhSUlUQ0hRWApBQ3AxRDVNWDFHaDBYQlZvdFJ6c21LQlVySzNrd0lFL2ZTdXJvbnpsYnArZjBGSXBmQmgvTjFtL2xuTGlOSnNwCkVhRmZtWFZVYSsxL0RIa3VUcDVra1BqRm1GdGU0aGU5YzdSOEdsckJRcE9uQmY4L1FjMWovU2VNY1JOcGhWK2wKYVdDYXRrNTJBSTJ2SlF0eWlVV2lOTzA9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K"
+                            ]
+                        }
+                    },
+                    "status": "No Content",
+                    "code": 204,
+                    "_postman_previewlanguage": "plain",
+                    "header": [
+                        {
+                            "key": "X-Powered-By",
+                            "value": "Express"
+                        },
+                        {
+                            "key": "Access-Control-Allow-Origin",
+                            "value": "*"
+                        },
+                        {
+                            "key": "ETag",
+                            "value": "W/\"42-fF7Ft2257IfWs4bM6bLOgHVDlR8\""
+                        },
+                        {
+                            "key": "Date",
+                            "value": "Sun, 24 Mar 2024 06:28:54 GMT"
+                        },
+                        {
+                            "key": "Connection",
+                            "value": "keep-alive"
+                        },
+                        {
+                            "key": "Keep-Alive",
+                            "value": "timeout=5"
+                        }
+                    ],
+                    "cookie": [],
+                    "body": null
+                }
+            ]
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [""]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [""]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "BASE_URL",
+            "value": "http://localhost:3000",
+            "type": "string"
+        }
+    ]
+}
