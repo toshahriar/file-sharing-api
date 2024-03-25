@@ -1,6 +1,11 @@
-import { config } from "@core/lib/config";
+import { config } from '@core/lib/config';
 import { StorageProviderContract } from '@core/lib/storage/contracts';
-import { DeleteObjectCommand, GetObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
+import {
+    DeleteObjectCommand,
+    GetObjectCommand,
+    PutObjectCommand,
+    S3Client,
+} from '@aws-sdk/client-s3';
 
 /**
  * Represents a storage provider implementation for AWS.
@@ -43,7 +48,7 @@ export class AwsStorageProvider implements StorageProviderContract {
                     Body: file.buffer,
                 })
             );
-            return {fileName: fileName, path: fileName, mimeType: file.mimetype, size: file.size};
+            return { fileName: fileName, path: fileName, mimeType: file.mimetype, size: file.size };
         } catch (error) {
             throw error;
         }
@@ -62,7 +67,7 @@ export class AwsStorageProvider implements StorageProviderContract {
                     new GetObjectCommand({
                         Bucket: config('storage.disks.aws.bucket'),
                         Key: path,
-                    }),
+                    })
                 )
             ).Body;
         } catch (error) {
@@ -78,10 +83,12 @@ export class AwsStorageProvider implements StorageProviderContract {
      */
     async delete(path: string): Promise<void> {
         try {
-            await this.client.send(new DeleteObjectCommand({
-                Bucket: config('storage.disks.aws.bucket'),
-                Key: path,
-            }));
+            await this.client.send(
+                new DeleteObjectCommand({
+                    Bucket: config('storage.disks.aws.bucket'),
+                    Key: path,
+                })
+            );
         } catch (error) {
             throw error;
         }

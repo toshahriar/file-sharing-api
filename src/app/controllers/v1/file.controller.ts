@@ -95,7 +95,7 @@ export class FileController {
             // Save file information to the database
             const data: any = await this.fileService.create(dto);
 
-            logger('file_upload_success', 'File uploaded successfully.', {fileId: dto.id}).info();
+            logger('file_upload_success', 'File uploaded successfully.', { fileId: dto.id }).info();
 
             return responder(res, HttpStatusEnum.CREATED, ResponseStatusEnum.SUCCESS)
                 .message(HttpStatusEnum.CREATED_MESSAGE)
@@ -152,7 +152,7 @@ export class FileController {
 
                 return responder(res, HttpStatusEnum.BAD_REQUEST, ResponseStatusEnum.ERROR)
                     .message('Signature verification failed.')
-                    .data({fileId: file.id})
+                    .data({ fileId: file.id })
                     .error();
             }
 
@@ -170,7 +170,11 @@ export class FileController {
                 fileId: file.id,
             }).info();
         } catch (err: any) {
-            logger('file_download_error', err?.message ?? 'File download error occurred!', err).error();
+            logger(
+                'file_download_error',
+                err?.message ?? 'File download error occurred!',
+                err
+            ).error();
 
             return responder(res, HttpStatusEnum.INTERNAL_SERVER_ERROR, ResponseStatusEnum.ERROR)
                 .message(err?.message ?? 'File download error occurred!')
@@ -220,7 +224,7 @@ export class FileController {
 
                 return responder(res, HttpStatusEnum.BAD_REQUEST, ResponseStatusEnum.ERROR)
                     .message('Signature verification failed.')
-                    .data({fileId: file.id})
+                    .data({ fileId: file.id })
                     .error();
             }
 
@@ -231,13 +235,13 @@ export class FileController {
 
                 return responder(res, HttpStatusEnum.BAD_REQUEST, ResponseStatusEnum.ERROR)
                     .message("File couldn't be deleted.")
-                    .data({fileId: file.id})
+                    .data({ fileId: file.id })
                     .error();
             }
 
             await this.storageService.delete(file.path);
 
-            logger('file_delete_success', 'File deleted successfully.', {fileId: file.id}).info();
+            logger('file_delete_success', 'File deleted successfully.', { fileId: file.id }).info();
 
             return responder(res, HttpStatusEnum.NO_CONTENT, ResponseStatusEnum.SUCCESS)
                 .message('File has been deleted.')

@@ -13,8 +13,8 @@ To get started with the File Sharing API, follow the steps below:
 Clone the repository by running the following command:
 
 ```bash
-git clone https://github.com/toshahriar/meldcx-file-sharing-api.git
-cd meldcx-file-sharing-api
+git clone https://github.com/toshahriar/file-sharing-api.git
+cd file-sharing-api
 ```
 
 #### Step 2:
@@ -58,8 +58,8 @@ docker compose run --rm app npm run test
 Clone the repository by running the following command:
 
 ```bash
-git clone https://github.com/toshahriar/meldcx-file-sharing-api.git
-cd meldcx-file-sharing-api
+git clone https://github.com/toshahriar/file-sharing-api.git
+cd file-sharing-api
 ```
 
 #### Step 2:

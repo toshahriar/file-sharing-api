@@ -11,7 +11,7 @@ module.exports = {
             path: process.env.FILE_STORAGE_PATH || '/var/www/app/storage/files',
         },
         aws: {
-            credentials:{
+            credentials: {
                 accessKeyId: process.env.AWS_S3_ACCESS_KEY_ID || 'minio',
                 secretAccessKey: process.env.AWS_S3_SECRET_ACCESS_KEY || 'miniosecret',
             },
@@ -19,7 +19,7 @@ module.exports = {
             bucket: process.env.AWS_S3_BUCKET || 'bucket',
             endpoint: process.env.AWS_S3_ENDPOINT || 'http://localhost:9000',
             forcePathStyle: JSON.parse(process.env.AWS_S3_FORCE_PATH_STYLE || 'true'),
-            signatureVersion: process.env.AWS_S3_SIGNATURE_VERSION || 'v4'
+            signatureVersion: process.env.AWS_S3_SIGNATURE_VERSION || 'v4',
         },
         gcp: {
             keyFile: process.env.GOOGLE_CLOUD_KEY_FILE || '',
